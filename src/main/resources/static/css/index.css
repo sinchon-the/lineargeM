@@ -1,0 +1,120 @@
+@charset "UTF-8";
+@import url("common.css");
+
+/* /////////////////////////////////////////// */
+/* //////visual.css/////////////////////////// */
+/* /////////////////////////////////////////// */
+#visual .visual-area{
+	position: absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height: 520px;
+	z-index: -1;
+	
+}
+
+#img-list ul li{
+	position: absolute;
+	width:100%;
+	top:0;
+	left:0;
+}
+#img-list ul li .cover{
+	height:520px;
+	background-color: rgba(0,0,0,0.3);
+}
+#img-list ul li{
+	height: 520px;
+	background: url("/images/visual/bn_top_pc_1.jpg") no-repeat center top;
+	background-size: cover;
+}
+#img-list ul li:nth-child(1){
+	background-image:url("/images/visual/bn_top_pc_1.jpg");
+}
+#img-list ul li:nth-child(2){
+	background-image:url("/images/visual/bn_top_pc_2.jpg");
+}
+#img-list ul li:nth-child(3){
+	background-image:url("/images/visual/bn_top_pc_3.jpg");
+}
+#img-list ul li:nth-child(4){
+	background-image:url("/images/visual/bn_top_pc_4.jpg");
+}
+#img-list ul li:nth-child(5){
+	background-image:url("/images/visual/bn_top_pc_5.jpg");
+}
+#img-list ul li .visual-title{
+	width:100%;
+	height: 520px;
+	z-index: 1;
+	color: #fff;
+	text-align: center;
+	padding-bottom: 32px;
+}
+#img-list ul li .visual-title p{
+	margin: 8px 0;
+	letter-spacing: -1px;
+}
+#img-list ul li .visual-title p.tit{
+	font-size: 39px;
+}
+#img-list ul li .visual-title p a{
+	color: #fff;
+	padding: 10px 20px;
+	border: 1px solid rgba(255,255,255,.2);
+	border-radius: 22px;
+	background: transparent;
+	letter-spacing: -1px;
+	display: inline-block;
+}
+#thumbnail{
+	width: 100%;
+	bottom: 34px;
+	position: absolute;
+}
+#thumbnail>.thumbnail-area{
+	width: 550px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+#thumbnail>.thumbnail-area ul li{
+	width:110px;
+	height: 76px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+#thumbnail>.thumbnail-area ul li img{
+	width:110px;
+	height: 70px;
+}
+
+#thumbnail>.thumbnail-area ul .th-target img{
+	border: 1px solid #ff5f3c;
+	height: 76px;
+}
+#thumbnail>.btn-th{
+	position: absolute;
+	top:0;
+	left: 0;
+	width: 100%;
+	height: 76px;
+}
+#thumbnail>.btn-th .btn-th-wrap{
+	width: 660px;
+	margin: 0 auto;
+}
+
+#thumbnail>.ea{
+	position: absolute;
+	top: -34px;
+	left: 0;
+	color: rgba(255,255,255,.4);
+	width:100%;
+	text-align: center;
+	font-size: 12px;
+}
+#thumbnail>.ea .idx{
+	color: rgba(255,255,255,1);
+}

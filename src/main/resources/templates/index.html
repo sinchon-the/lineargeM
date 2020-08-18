@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript" src="/js/jquery-3.5.1.min.js"></script>
+	<script type="text/javascript" src="/js/myscript.js"></script>
+	<link rel="stylesheet" type="text/css" href="/css/index.css">
+</head>
+<body>
+	<div th:insert="/commons/header::header"></div>
+	<section id="visual">
+		<h1>visual</h1>
+		<div class="visual-area">
+			
+			<!-- visual 이미지S -->
+			<div id="img-list">
+				<ul>
+					<li>
+						<div class="cover">
+							<div class="visual-title flex-column-center">
+								<p class="tit">&lt;디온 공성전&gt;</p>
+								<p>디온 성의 주인을 가리기 위한 첫 번째 공성전이 시작됩니다.</p>
+								<p><a href="#">바로가기</a></p>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="cover">
+							<div class="visual-title flex-column-center">
+								<p class="tit">공성전 가이드북</p>
+								<p>다가 올 공성전을 위한 필독서!</p>
+								<p><a href="#">바로가기</a></p>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="cover">
+							<div class="visual-title flex-column-center">
+								<p class="tit">디온 공성전 이벤트 통합 안내</p>
+								<p>명예로운 왕좌의 첫 번째 주인이 되기 위한 전투가 시작됩니다.</p>
+								<p><a href="#">바로가기</a></p>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="cover">
+							<div class="visual-title flex-column-center">
+								<p class="tit">디온 훈련소</p>
+								<p>매일 2회! 특별 훈련에 참여하고 전쟁을 준비하라!</p>
+								<p><a href="#">바로가기</a></p>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="cover">
+							<div class="visual-title flex-column-center">
+								<p class="tit">회색 기사단의 습격</p>
+								<p>회색 기사단을 물리치고 회색 기사단의 전리품을 획득하세요</p>
+								<p><a href="#">바로가기</a></p>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<!-- visual 썸네일 목록 -->
+			<div id="thumbnail">
+				<div class="ea">
+					<span class="idx">1</span>/<span class="tot-ea">17</span>
+				</div>
+				<div class="thumbnail-area">
+					<ul class="flex" id="th-list">
+						<li class="th-target">
+							<img alt="썸네일이미지1" src="/images/visual/bn_sum_pc_01.jpg">
+						</li>
+						<li>
+							<img alt="썸네일이미지2" src="/images/visual/bn_sum_pc_02.jpg">
+						</li>
+						<li>
+							<img alt="썸네일이미지3" src="/images/visual/bn_sum_pc_03.jpg">
+						</li>
+						<li>
+							<img alt="썸네일이미지4" src="/images/visual/bn_sum_pc_04.jpg">
+						</li>
+						<li>
+							<img alt="썸네일이미지5" src="/images/visual/bn_sum_pc_05.jpg">
+						</li>
+					</ul>
+				</div>
+				<div class="btn-th flex-column-center">
+					<div class="btn-th-wrap flex-between">
+						<button id="btn-prev"><img alt="" src="/images/ico_prev1_x1.png"></button>
+						<button id="btn-next"><img alt="" src="/images/ico_next1_x1.png"></button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<main></main>
+	<div th:insert="/commons/footer::footer"></div>
+</body>
+</html>

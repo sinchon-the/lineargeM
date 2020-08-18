@@ -1,0 +1,112 @@
+@charset "UTF-8";
+
+/* /////////////////////////////////////////// */
+/* //////header.css/////////////////////////// */
+/* /////////////////////////////////////////// */
+/* header{
+	height: 520px;
+} */
+#header-wrap{
+	background-color: rgba(0,0,0,0.5);
+	color: #fff;
+}
+#header-wrap a{
+	color: #fff;
+}
+#header-top{
+	height: 56px;
+	
+	padding: 0 25px;
+	
+}
+/* ////GNB CSS///////////////////////////////////////////// */
+/*
+<div class="GNB">
+	<a href="#">
+		<span>
+			<i></i>
+			<i></i>
+			<i></i>
+		</span>
+	</a>
+</div>
+*/
+.GNB a{
+	font-size: 0;
+}
+.GNB a span {
+	position: relative;
+	display: inline-block;
+	width:20px;
+	height:21px;
+	overflow: hidden;
+}
+.GNB a span i{
+	position: absolute;
+	top:0;
+	left:0;
+	display: inline-block;
+	width: 20px;
+	border-top:1px solid #fff;
+	transition: all 0.2s;
+}
+.GNB a span i:nth-child(1){
+	top: 4px;
+}
+.GNB a span i:nth-child(2){
+	top: 10px;
+}
+.GNB a span i:nth-child(3){
+	top: 16px;
+}
+
+.GNB a span:hover i:nth-child(1){
+	transform: rotate(45deg);
+	left: 4px;
+}
+.GNB a span:hover i:nth-child(2){
+	transform: rotate(-180deg);
+}
+.GNB a span:hover i:nth-child(3){
+	transform: rotate(-45deg);
+	left: 4px;
+}
+
+/* ///////////////////////////////////////// */
+#h-t-left>div .logo{
+	margin-left: 16px;
+	font-size: 0;
+}
+#h-t-left>div .logo a{
+	display: inline-block;
+	width: 134px;
+	height: 34px;
+	background: url("/images/bi.png") no-repeat  center ;
+	background-size: cover;
+	
+}
+
+/* /////header-bottom NAV/////////////////////////////// */
+#lnb>div{
+	border-top: 1px solid rgba(255,255,255,0.2);
+}
+#lnb>div .lnb-list{
+	margin-left: 42px;
+}
+#lnb>div .lnb-list li{
+	padding: 0 20px;
+} 
+#lnb>div .lnb-list li a{
+	display: inline-block;
+	height: 58px;
+	line-height: 58px;
+}
+#lnb>div .lnb-list li a em{
+	display: none;
+}
+#lnb>div .lnb-list li a em.icon-new{
+	display: inline;
+	font-size: 12px;
+	color: #ff5f3c;
+	margin-left: 5px;
+}
