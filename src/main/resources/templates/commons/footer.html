@@ -7,8 +7,89 @@
 <body>
 	<footer th:fragment="footer">
 		<h1>하단영역</h1>
-		<div id="footer-wrap" class="view-width">
-			푸터내용
+		<div id="footer-wrap" >
+			<section id="sns">
+				<h1>sns</h1>
+				<div class="flex-center">
+					<a href="#" class="facebook"></a>
+					<a href="#" class="youtube"></a>
+				</div>
+			</section>
+			<section id="country">
+				<h1>country</h1>
+				<div class="flex-center">
+					<a href="#" class="pipe">커뮤니티 정책</a>
+					<i class="icon-country"></i>
+					<span>대한민국</span>
+				</div>
+			</section>
+			<nav id="links">
+				<h1>links</h1>
+				<div>
+					<ul class="flex-center">
+						<li><a href="#">회사소개</a></li>
+						<li><a href="#">이용약관</a></li>
+						<li><a href="#">개인정보처리방침</a></li>
+						<li><a href="#">청소년 보호 정책</a></li>
+						<li><a href="#">운영정책</a></li>
+					</ul>
+				</div>
+			</nav>
+			<section id="copyright">
+				<h1>copyright</h1>
+				<div class="com">
+					<div class="com-info flex-center">
+						<dl>
+							<dt>상호</dt>
+							<dd>(주)엔씨소프트</dd>
+						</dl>
+						<dl>
+							<dt>대표</dt>
+							<dd>김택진</dd>
+						</dl>
+						<dl>
+							<dt>사업자 등록번호</dt>
+							<dd>123-45-00678</dd>
+						</dl>
+						<dl>
+							<dt>통신판매업신고</dt>
+							<dd>제2020-서울신촌-1111호</dd>
+						</dl>
+						<dl>
+							<dt><a href="#">사업자정보확인</a></dt>
+						</dl>
+					</div>
+					<div class="com-cs flex-center">
+						<dl>
+							<dt>주소</dt>
+							<dd>서울시 서대문구 신촌로114 더조은IT아카데미</dd>
+						</dl>
+						<dl>
+							<dt>고객상담</dt>
+							<dd><a href="tel:0212345678">02-1234-5678</a></dd>
+						</dl>
+						<dl>
+							<dt>팩스</dt>
+							<dd>02-0000-0000</dd>
+						</dl>
+						<dl>
+							<dt>이메일</dt>
+							<dd><a href="#">the@test.com</a></dd>
+						</dl>
+					</div>
+					<div class="copy">
+						Lineage2M ® is a registered trademark of NCSOFT Corporation. Copyright © NCSOFT Corporation. All Rights Reserved.
+					</div>
+				</div>
+			</section>
+			<section id="footer-logo">
+				<h1>logo</h1>
+				<div class="flex-center">
+					<a href="/">
+					<img alt="ci" src="/images/ci.png">
+					</a>
+				</div>
+			</section>
 		</div>
 	</footer>
 </body>

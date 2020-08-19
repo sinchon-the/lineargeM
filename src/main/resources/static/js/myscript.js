@@ -3,6 +3,7 @@
  * AUTHOR  : 조재청
  * CONTACT : nick2615@naver.com
  */
+var e_slide;
 $(function(){
 	img_sort();
 	$("#btn-next").click(next);
@@ -10,8 +11,97 @@ $(function(){
 	var size=$("#th-list li").length;
 	$("#thumbnail .ea .tot-ea").text(size);
 	
+	$(window).scroll(stickyEvent);
+		
+	e_slide=setTimeout(e_start,5000);
 	
+	$("#event").hover(e_stop, function(){
+		e_slide=setTimeout(e_start,5000);
+	});
+	e_bullet();
+	$(".e-next").click(e_next);
+	$(".e-prev").click(e_prev);
+	$("#event .tit-wrap ul li").click(e_move);
 });
+//////////////////////////////////////////////////
+function e_move(){
+	var sizeW=$("#event .img-wrap").width();
+	var i=$(this).index();
+	var lis=$("#event .img-wrap>ul li");//li여러개(5개)
+	lis.each(function(){
+		if($(this).val() == i){//대상이미지를 찾는다
+			var idx=$(this).index();//li중 현재 위치한 index
+			var pos=sizeW*idx;//한개이미지사이즈*index = left가이동할 위치 계산
+			$("#event .img-wrap>ul").stop().animate({left : -pos}, 500,function(){
+				for(var j=0; j<idx; j++){
+					var first=$("#event .img-wrap>ul li:first-child");
+				 	var last=$("#event .img-wrap>ul li:last-child");
+				 	last.after(first);
+				}
+				$("#event .img-wrap>ul").css("left",0);
+				e_bullet();
+			});
+ 
+		}
+	});
+}
+//////////////////////////////////////////////////
+function e_bullet(){
+	//현재 슬라이드 이미지 위치값을 value로 세팅한거 읽어오기
+	var i=$("#event .img-wrap>ul li:first-child").val();
+	var target=$("#event .tit-wrap ul li:eq("+i+") .e-bullet");
+	var bullets=$("#event .tit-wrap ul li .e-bullet");
+	//alert(target);
+	bullets.css("background-color","rgba(0,0,0,0.3)");
+	target.css("background-color","rgba(0,0,0,0.6)");
+}
+//////////////////////////////////////////////////
+function e_stop(){
+	clearTimeout(e_slide);
+}
+function e_start(){
+	e_next();
+	e_slide=setTimeout(e_start,5000);
+}
+function e_prev(){
+	var sizeW=$("#event .img-wrap").width();
+	var first=$("#event .img-wrap>ul li:first-child");
+	var last=$("#event .img-wrap>ul li:last-child");
+	//first앞에 last 이동 하고 ul의 left -sizeW
+	first.before(last);
+	$("#event .img-wrap>ul").css("left", -sizeW);
+	
+	$("#event .img-wrap>ul").stop().animate({left : 0}, 500,function(){
+		e_bullet();
+	});
+	
+}
+function e_next(){
+	
+	var sizeW=$("#event .img-wrap").width();
+	$("#event .img-wrap>ul").stop().animate({left : -sizeW}, 500,function(){
+		var first=$("#event .img-wrap>ul li:first-child");
+		var last=$("#event .img-wrap>ul li:last-child");
+		//last뒤에 first 이동 하고 ul의 left 0
+		last.after(first);
+		$("#event .img-wrap>ul").css("left",0);
+		e_bullet();
+	});
+	
+}
+//////////////////////////////////////////////////
+function stickyEvent(){
+		
+		if($(window).scrollTop() == 0){
+			$("#header-top").show();
+			$("#header-wrap").css("background-color","rgba(0,0,0,0.5)");
+			$("#lnb a").css("color","#fff");
+		}else{
+			$("#header-top").hide();
+			$("#header-wrap").css("background-color","rgba(255,255,255,0.8)");
+			$("#lnb a").css("color","#000");
+		}
+}
 
 function changeImg(n){
 	var size=$("#th-list li").length;
@@ -119,3 +209,5 @@ function img_sort(){
 }
 ////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////
+
+

@@ -29,7 +29,7 @@ table{
 	border-spacing: 0;
 }
 button{
-	background: none;
+	background: transparent;
 	border: none;
 	cursor: pointer;
 	outline: none;

@@ -3,12 +3,20 @@
 /* /////////////////////////////////////////// */
 /* //////header.css/////////////////////////// */
 /* /////////////////////////////////////////// */
-/* header{
-	height: 520px;
-} */
+header{
+	position: sticky;
+	top:0;
+	left:0;
+	width:100%;
+	z-index: 100000;
+}
 #header-wrap{
+	position: absolute;
+	top:0;
+	width:100%;
 	background-color: rgba(0,0,0,0.5);
 	color: #fff;
+	
 }
 #header-wrap a{
 	color: #fff;
@@ -87,6 +95,10 @@
 }
 
 /* /////header-bottom NAV/////////////////////////////// */
+#lnb{
+	position: sticky;
+	top: 0;
+}
 #lnb>div{
 	border-top: 1px solid rgba(255,255,255,0.2);
 }
