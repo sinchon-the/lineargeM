@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<th:block th:include="/commons/head :: commonHead"></th:block>
+	<link rel="stylesheet" type="text/css" href="/css/sign/login.css">
+</head>
+<body>
+	<main>
+		<h1>로그인</h1>
+		
+		<div id="log" class="wrap view-width">
+			<div id="error"  th:if="${log_msg != null}" th:utext="${log_msg}">
+			</div>
+			<div id="welcome"  th:if="${welcome_msg!=null}" th:utext="${welcome_msg}">
+			</div>
+			<section id="logo-top">
+				<h1>상단</h1>
+				<div class="flex-center">
+					<a href="/">
+						<img alt="logo" src="/images/bi-plaync.png">
+					</a>
+				</div>
+			</section>
+			<section id="login" >
+				<h1>로그인</h1>
+				<form action="/sign/login" method="post">
+					<input type="text" name="email" placeholder="아이디 또는 이메일">
+					<input type="password" name="pw" placeholder="비밀번호">
+					<button type="submit">로그인</button>
+				</form>
+			</section>
+			<nav id="account">
+				<h1>계정정보</h1>
+				<ul class="flex-center">
+					<li class="pipe"><a href="#">계정찾기</a></li>
+					<li class="pipe"><a href="#">비밀번호 찾기</a></li>
+					<li><a href="/sign/join">회원가입</a></li>
+				</ul>
+			</nav>
+			<section id="f-g-n">
+				<h1>구글/네이버로그인</h1>
+				<ul>
+					<li><a href="#"><img src="/images/icon-bi-google.svg">Google로 로그인</a></li>
+					<li><a href="#"><img src="https://ssl.pstatic.net/sstatic/search/favicon/favicon_191118_pc.ico">NAVER로 로그인</a></li>
+				</ul>
+			</section>
+		</div>
+	</main>
+	
+</body>
+</html>

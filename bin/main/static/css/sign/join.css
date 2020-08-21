@@ -1,0 +1,128 @@
+@charset "UTF-8";
+@import url("../common.css");
+
+
+header{
+	min-width: 880px;
+}
+#logo-top{
+	border-bottom: 1px solid #d5d9e2;
+	
+}
+#logo-top img{
+	width: 80px;
+    height: 27px;
+    margin: 15px 0;
+}
+/* ////////////////////////////// */
+#content-tit {
+	text-align: center;
+	padding: 50px 0 30px;
+	
+}
+#content-tit .tit{
+	color: #535768;
+	font-size: 28px;
+	font-weight: 700;
+}
+#content-tit .msg{
+	color: #9398aa;
+	font-size: 15px;
+	font-weight: 700;
+	margin-top: 15px;
+}
+main>.wrap{
+	width: 880px;
+	margin: 0 auto;
+	letter-spacing: -1px;
+	padding: 0 220px;
+}
+main>.wrap form div{
+	padding-top: 16px;
+}
+main>.wrap form div p a:before{
+	content: "!";
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	color: #fff;
+	background-color: #378ff1;
+	border-radius: 100%;
+	vertical-align: text-bottom;
+	text-align: center;
+	line-height: 20px;
+	margin-right: 5px;
+}
+main>.wrap form div p a{
+	line-height: 40px;
+	color: #378ff1;
+	font-weight: 700;
+	text-decoration: underline;
+	font-size: 15px;
+}
+main>.wrap form div span{
+	margin-top: 8px;
+	color: #9398aa;
+	font-size: 14px;
+}
+main>.wrap form input,
+main>.wrap form button{
+	height: 50px;
+	width: 100%;
+	letter-spacing: -1px;
+}
+main>.wrap form div input{
+	width: 100%;
+	padding: 0 60px 0 16px;
+}
+main>.wrap form div span{
+	display: block;
+}
+main>.wrap form .email input{
+	flex: 2;
+}
+main>.wrap form button{
+	border: 2px solid #bfbfd0;
+    background-color: #d1d1de;
+    color: #fff;
+    font-size: 16px;
+}
+main>.wrap form button[type=submit]{
+	margin-top: 16px;
+}
+main>.wrap form .email button{
+	margin-left: 8px;
+	flex: 1;
+}
+main>.wrap form input[type=password]{
+	background-color: #efeff4;
+    border: 1px solid #d5d9e2;
+}
+
+/* //////////////////////////// */
+footer{
+	min-width: 880px;
+	background-color: #fff;
+}
+#footer-wrap{
+	padding : 40px 0 75px;
+	width: 880px;
+	margin: 0 auto;
+	color: rgba(0,0,0,0.5);
+	font-size: 12px;
+	letter-spacing: -1px;
+	text-align: center;
+}
+#footer-wrap a{
+	color: rgba(0,0,0,0.5);
+}
+
+#links div ul li a {
+    font-size: 14px;
+    color: rgba(0,0,0,0.5);
+}
+
+#copyright {
+    width: 880px;
+    border-top: 0.5px solid rgba(0,0,0,0.5);
+}

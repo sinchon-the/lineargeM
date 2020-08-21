@@ -1,0 +1,87 @@
+@charset "UTF-8";
+@import url("../common.css");
+
+input,button{
+	display: block;
+	height: 56px;
+	width: 100%;
+	margin: 10px 0;
+	padding: 15px 16px;
+}
+.view-width{
+	width: 450px;
+	margin: 0 auto;
+}
+#error{
+	margin-bottom: 40px;
+	padding: 20px 20px;
+    font-size: 16px;
+    text-align: center;
+    color: #da3c31;
+    border-left: 5px solid #da3c31;
+    background-color: #f6cecb;
+}
+#welcome{
+	margin-bottom: 40px;
+	padding: 20px 20px;
+    font-size: 16px;
+    text-align: center;
+    color:  #334571;
+    border-left: 5px solid #061333;
+    background-color: #dbe5fb;
+}
+#log {
+	margin-top:100px;
+	background-color: #efeff4;
+	padding: 50px 20px 100px;
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,.25);
+	
+}
+#login{
+	
+	width: 365px;
+	margin: 30px auto 0;
+}
+#login button{
+	background-color: #334571;
+	color: #fff;
+	font-weight: 700;
+	font-size: 20px;
+}
+#account{
+	margin-top: 15px;
+}
+#account ul li a{
+	padding: 0 15px;
+}
+.pipe::after{
+	margin:0;
+	height: 12px;
+	border-left: 1px solid #535768;
+	opacity: 0.25;
+}
+#f-g-n{
+	margin-top: 15px;
+	text-align: center;
+}
+#f-g-n ul{
+	width: 365px;
+	margin: 0 auto;
+}
+#f-g-n ul li{
+	height: 56px;
+	margin: 10px 0;
+	border: 1px solid #d5d9e2;
+	background-color: #fff;
+	line-height: 56px;
+}
+#f-g-n ul li a{
+ color: #535768;
+}
+#f-g-n ul li img{
+	width: 15px;
+	height: 15px; 
+	margin-right: 15px;
+	vertical-align: baseline;
+}
+

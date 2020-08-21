@@ -1,0 +1,44 @@
+@charset "UTF-8";
+/* //////공통적용////////////////////// */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&family=Noto+Sans+KR:wght@100;300;400&display=swap');
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+	font-family: malgun gothic,AppleGothic,dotum;
+}
+h1{
+	position: absolute; 
+	left:-9999px;
+}
+li{
+	list-style: none;
+}
+input, select, textarea, button {
+	font: inherit; 
+	color: inherit; 
+	vertical-align: middle; 
+}
+a{
+	text-decoration:none;
+	color: #000;
+}
+table{
+	border-spacing: 0;
+}
+button{
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	outline: none;
+}
+
+
+
+
+/* /////////////////////////////// */
+
+
+

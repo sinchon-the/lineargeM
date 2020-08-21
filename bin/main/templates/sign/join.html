@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<th:block th:include="/commons/head :: commonHead"></th:block>
+	<link rel="stylesheet" type="text/css" href="/css/sign/join.css">
+</head>
+<body>
+	<header>
+		<h1>상단</h1>
+		<div id="logo-top" class="flex-center">
+			<a href="/">
+				<img alt="logo" src="/images/bi-plaync-s.png">
+			</a>
+		</div>
+	</header>
+	<main>
+		<h1>회원가입</h1>
+		<div class="wrap">
+			<div id="content-tit">
+				<p class="tit">회원가입</p>
+				<p class="msg">계정 정보를 입력해 주세요</p>
+			</div>
+			<div id="join">
+				<form action="/sign/join" method="post">
+					<div class="email flex-between">
+						<input type="text" name="email" placeholder="계정 (이메일)"><button type="button">인증메일 발송</button>
+					</div>
+					
+					<div>
+						<p><a href="#">보안 안내</a></p>
+						<input type="password" name="pw" placeholder="비밀번호">
+						<span class="guide-msg">8 ~ 16자 영문 대소문자, 숫자, 특수문자를 조합해 주세요.</span>
+					</div>
+					<div>
+						<input type="password"  placeholder="비밀번호 확인">
+						<span class="guide-msg">비밀번호를 한번 더 입력해 주세요.</span>
+					</div>
+					<div>
+						<button type="submit">등록</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</main>
+	<footer>
+		<h1>하단</h1>
+		<script type="text/javascript">
+			$(function(){
+				$("#footer-logo img").attr("src","/images/logo_s.svg");
+			});
+		</script>
+		<div id="footer-wrap">
+			<th:block th:include="/commons/footer :: footerBottom"></th:block>
+		</div>
+	</footer>
+</body>
+</html>

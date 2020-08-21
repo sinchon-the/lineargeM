@@ -1,17 +1,63 @@
 package lineageM.controller;
 
 
+import java.io.File;
 import java.util.List;
 import java.util.Vector;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import lineageM.domain.dto.EventListDto;
+import lineageM.domain.dto.JoinDto;
+import lineageM.domain.dto.LoginDto;
+import lineageM.domain.dto.SessionUser;
+import lineageM.services.MemberService;
 
 @Controller
 public class ViewController {
+	
+	@Autowired
+	private MemberService memberService;
+	
+	@GetMapping("/sign/logout")
+	public String logout(HttpSession session) {
+		session.removeAttribute("user");
+		return "redirect:/";
+	}
+	//로그인 처리
+	@PostMapping("/sign/login")
+	public ModelAndView login(LoginDto dto) {
+		//System.out.println(dto);
+		//입력된 정보를 DB에서 체크하고..일치하는 데이터가 있으면 로그인처리..아니면 메시지출력
+		ModelAndView mv=memberService.loginCheck(dto);
+		return mv;
+	}
+	//로그인 페이지 이동
+	@GetMapping("/sign/login")
+	public String login() {
+		return "/sign/login";
+	}
+	//회원가입 페이지 이동
+	@GetMapping("/sign/join")
+	public String join() {
+		return "/sign/join";
+	}
+	//회원가입 처리
+	@PostMapping("/sign/join")
+	public ModelAndView join(JoinDto dto, HttpServletRequest request) {
+		//user_ip 세팅
+		dto.setUser_ip(request.getRemoteAddr());
+		ModelAndView mv=memberService.save(dto);
+		return mv;
+	}
 	
 	@GetMapping("/")
 	public String index(Model model) {
@@ -58,6 +104,10 @@ public class ViewController {
 				));
 		
 		model.addAttribute("eventList", eventList);
+		
+		File file=new File("./");
+		//System.out.println(file.getAbsolutePath());
+		model.addAttribute("path", file.getAbsolutePath());
 		return "/index";
 	}
 }
