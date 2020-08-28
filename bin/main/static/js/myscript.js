@@ -30,11 +30,12 @@ $(function(){
 	$("#event .tit-wrap ul li").click(e_move);
 });
 //////////////////////////////////////////////////
+//블릿클릭시 이동
 function e_move(){
 	//var sizeW=$("#event .img-wrap").width();
 	var i=$(this).index();
-	//var lis=$("#event .img-wrap>ul li");//li여러개(5개)
-	e_ea.each(function(){
+	var lis=$("#event .img-wrap>ul>li");//li여러개(5개)
+	lis.each(function(){
 		if($(this).val() == i){//대상이미지를 찾는다
 			var idx=$(this).index();//li중 현재 위치한 index
 			var pos=e_sizeW*idx;//한개이미지사이즈*index = left가이동할 위치 계산

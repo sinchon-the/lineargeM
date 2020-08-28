@@ -41,6 +41,17 @@
 	height:14px;
 	margin: 0 16px;
 }
+.btn-style{
+	background-color: #eb6715;
+	padding: 0.5em 2em;
+	border-radius: 5%;
+	display: inline-block;
+	color: #fff;
+	font-weight: 700;
+}
+#title-img{
+	min-width: 1180px;
+}
 /* 
 body{
 	overflow-x: hidden;

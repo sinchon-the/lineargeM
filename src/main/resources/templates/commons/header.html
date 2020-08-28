@@ -33,12 +33,12 @@
 						<div class="flex">
 							<th:block th:if="${session.user != null}">
 								[[${session.user.name}]]님!
-								<a href="/sign/logout" class="pipe">로그아웃</a>
+								<a href="/user/logout" class="pipe">로그아웃</a>
 							</th:block>
 							<th:block th:if="${session.user == null}">
-								<a href="/sign/login" class="pipe">로그인</a>
+								<a href="/user/login" class="pipe">로그인</a>
 							</th:block>
-							<a href="/sign/join">회원가입</a>
+							<a href="/user/signup">회원가입</a>
 						</div>
 					</nav>
 				</div>
@@ -49,13 +49,13 @@
 					<ul class="flex lnb-list">
 						
 						<li>
-							<a href="#">
+							<a href="/jpa/list">
 								<span>소식</span>
 								<em class="icon-new">N</em>
 							</a>
 						</li>
 						<li>
-							<a href="#">
+							<a href="/event/list">
 								<span>이벤트</span>
 								<em>N</em>
 							</a>
@@ -67,7 +67,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="#">
+							<a href="/board/list">
 								<span>커뮤니티</span>
 								<em >N</em>
 							</a>
@@ -85,8 +85,8 @@
 							</a>
 						</li>
 						<li>
-							<a href="#">
-								<span>미디어</span>
+							<a href="/spring/list">
+								<span>Spring</span>
 								<em >N</em>
 							</a>
 						</li>

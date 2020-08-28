@@ -1,0 +1,49 @@
+@charset "UTF-8";
+@import url("../common.css");
+
+/* /////////////////////////////////////////// */
+/* //////board/write.css/////////////////////////// */
+/* /////////////////////////////////////////// */
+
+#title-img>div{
+	min-height: 197px;
+	background-image: url("/images/header_bg_1.jpg");
+	background-repeat: no-repeat;
+	background-size: 1920px auto;
+	background-position: 50% 0;
+	background-color: #000;
+}
+
+#page-tit p{
+	font-size: 20px;
+	font-weight: 700;
+	padding: 40px 0;
+}
+#board{
+	margin-bottom: 40px;
+}
+#board .wrap .board-detail .subject{
+	font-size: 26px;
+	font-weight: 700;
+}
+#board .wrap .board-detail .info{
+	font-size: 14px;
+	border-bottom: 1px solid #eaecef;
+	padding-bottom: 30px;
+	color: #8c919a;
+}
+#board .wrap .board-detail .info .pipe::after {
+	border-color: #eaecef;
+	padding: 0 0.5em;
+	height: 10px;
+}
+#board .wrap .board-detail .info .writer{
+	color: #494949;
+}
+#board .wrap .board-detail .content{
+	min-height: 250px;
+	padding: 35px 0; 
+}
+
+
+

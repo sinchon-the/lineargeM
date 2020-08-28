@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<th:block th:include="/commons/head::commonHead"></th:block>
+	<link rel="stylesheet" type="text/css" href="/css/board/list.css">
+</head>
+<body>
+	<th:block th:insert="/commons/header::header"></th:block>
+	<section id="title-img">
+		<h1>페이지 타이틀 이미지</h1>
+		<div>
+		</div>
+	</section>
+	<main>
+		<h1>mybatis로 처리한 게시글</h1>
+		<div class="view-width">
+			<section id="page-tit">
+				<h1>페이지제목</h1>
+				<p>mybatis로 처리한 게시글 예제</p>
+			</section>
+			<section id="board">
+				<h1>게시글 내용</h1>
+				<div class="wrap">
+					<div class="btn">
+						<a href="/board/write">글쓰기</a>
+					</div>
+					<ul class="tit flex">
+						<li>no</li>
+						<li>제목</li>
+						<li>조회수</li>
+						<li>작성자</li>
+						<li>작성일</li>
+					</ul>
+					<ul class="contents flex" th:each="dto:${boardList}" >
+						<li th:text="${dto.no}"></li>
+						<li><a th:href="|/board/${dto.no}|">[[${dto.subject}]]</a></li>
+						<li>[[${dto.count}]]</li>
+						<li>[[${dto.writer}]]</li>
+						<li>[[${dto.reg_date}]]</li>
+					</ul>
+				</div>
+			</section>
+		</div>
+	</main>
+	<th:block th:insert="/commons/footer::footer"></th:block>
+</body>
+</html>

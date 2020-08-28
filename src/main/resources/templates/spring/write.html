@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<th:block th:include="/commons/head::commonHead"></th:block>
+	<link rel="stylesheet" type="text/css" href="/css/board/write.css">
+</head>
+<body>
+	<th:block th:insert="/commons/header::header"></th:block>
+	<section id="title-img">
+		<h1>페이지 타이틀 이미지</h1>
+		<div>
+		</div>
+	</section>
+	<main>
+		<h1>mybatis로 처리한 게시글</h1>
+		<div class="view-width">
+			<section id="page-tit">
+				<h1>페이지제목</h1>
+				<p>board 게시판 글쓰기</p>
+			</section>
+			<section id="board">
+				<h1>게시글 내용</h1>
+				<div class="wrap">
+					<form class="write-form" action="/spring/write" method="post">
+						<input name="writer" type="hidden" value="코딩그라운드">
+						<input name="subject" placeholder="제목을 입력하세요">
+						<textarea rows="10" cols="100" name="content" placeholder="내용입력하세요"></textarea>
+						<button class="btn-style" type="submit">등록</button>
+					</form>
+				</div>
+			</section>
+		</div>
+	</main>
+	<th:block th:insert="/commons/footer::footer"></th:block>
+</body>
+</html>
