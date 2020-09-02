@@ -4,65 +4,37 @@ import java.util.List;
 import java.util.Vector;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
-import lineageM.domain.dto.EventDto;
-import lineageM.domain.dto.EventListDto;
-import lineageM.domain.dto.EventPageDto;
-import lineageM.domain.entity.EventList;
-import lineageM.domain.entity.EventListRepository;
+import lineageM.domain.dto.EventRequestDto;
+import lineageM.domain.dto.EventResponseDto;
+import lineageM.domain.entity.Event;
+import lineageM.domain.entity.EventRepository;
 
 @Service
 public class EventServiceImpl implements EventService{
 	
 	@Autowired
-	private EventListRepository repository;
+	private EventRepository repository;
 	
 	@Override
-	public void reg(EventDto dto) {
-		repository.save(dto.toEntity());// EventList
+	public void save(EventRequestDto dto) {
+		
+		repository.save(dto.toEntity());
+		
 	}
 
 	@Override
-	public List<EventListDto> getEventList() {
+	public List<EventResponseDto> listAll() {
+		List<Event> result=repository.findAllByUsed("on");
 		
-		Sort sort=Sort.by(Direction.ASC, "no");
-		List<EventList> list=repository.findAllByUsed("on",sort);
+		List<EventResponseDto> list=new Vector<>();
 		
-		List<EventListDto> dtos=new Vector<EventListDto>();
-		for(EventList el:list) {
-			EventListDto dto=new EventListDto(el);
-			dtos.add(dto);
+		for(Event event :result) {
+			EventResponseDto dto=new EventResponseDto(event);
+			list.add(dto);
 		}
-		
-		return dtos;
+		return list;
 	}
-
-	@Override
-	public List<EventPageDto> getList() {
-		Sort sort=Sort.by(Direction.ASC, "no");
-		List<EventList> entityList=repository.findAll(sort);
-		
-		List<EventPageDto> dtos=new Vector<>();
-		for(EventList el: entityList) {
-			//EventList-->EventPageDto
-			EventPageDto dto=new EventPageDto(el);
-			dtos.add(dto);
-		}
-		return dtos;
-	}
-
-	@Transactional
-	@Override
-	public void toggleUsed(Long no) {
-		
-		repository.findById(no)
-		//	검색한 데이터가 수정이 필요한경우 .map()사용
-				.map(e->e.toggleUsed(e.getUsed()))
-				.orElse(null);
-	}
-
+	
 }

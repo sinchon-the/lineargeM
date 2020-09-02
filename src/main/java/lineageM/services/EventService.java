@@ -2,18 +2,13 @@ package lineageM.services;
 
 import java.util.List;
 
-import lineageM.domain.dto.EventDto;
-import lineageM.domain.dto.EventListDto;
-import lineageM.domain.dto.EventPageDto;
+import lineageM.domain.dto.EventRequestDto;
+import lineageM.domain.dto.EventResponseDto;
 
 public interface EventService {
 
-	void reg(EventDto dto);
+	void save(EventRequestDto dto);
 
-	List<EventListDto> getEventList();
-
-	List<EventPageDto> getList();
-
-	void toggleUsed(Long no);
+	List<EventResponseDto> listAll();
 
 }
