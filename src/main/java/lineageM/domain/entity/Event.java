@@ -52,7 +52,14 @@ public class Event {
 		this.b_url = b_url;
 	}
 
-	
+	public Event usedToggle() {
+		if(used.equals("on")) {
+			used="off";
+		}else if(used.equals("off")) {
+			used="on";
+		}
+		return this;
+	}
 	
 	
 	

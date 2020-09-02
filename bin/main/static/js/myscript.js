@@ -18,11 +18,13 @@ $(function(){
 	$("#thumbnail .ea .tot-ea").text(size);
 	
 	$(window).scroll(stickyEvent);
-		
-	e_slide=setTimeout(e_start,5000);
+	if(e_ea>1){
+		e_slide=setTimeout(e_start,5000);
+	}
 	
 	$("#event").hover(e_stop, function(){
-		e_slide=setTimeout(e_start,5000);
+		if(e_ea>1)
+			e_slide=setTimeout(e_start,5000);
 	});
 	e_bullet();
 	$(".e-next").click(e_next);

@@ -20,7 +20,7 @@ public class ViewController {
 	@GetMapping("/")
 	public String index(Model model) {
 		
-		List<EventResponseDto> list=service.listAll();
+		List<EventResponseDto> list=service.listAllByUsed();
 		model.addAttribute("eventList", list);
 		return "/index";
 	}

@@ -36,17 +36,43 @@
 						<li>b_url</li>
 						<li>b_text</li>
 						<li>적용유무</li>
+						<li>수정</li>
+						<li>삭제</li>
 					</ul>
+					<form>
 					<ul class="contents flex" th:each="dto:${list}" >
+					
 						<li th:text="${dto.no}"></li>
-						<li>[[${dto.l_url}]]</li>
-						<li>[[${dto.l_text}]]</li>
-						<li>[[${dto.t_url}]]</li>
-						<li>[[${dto.t_text}]]</li>
-						<li>[[${dto.b_url}]]</li>
-						<li>[[${dto.b_text}]]</li>
+						<li>
+							<span>[[${dto.l_url}]]</span>
+							<input type="file" name="files" th:value="${dto.l_url}">
+						</li>
+						<li>
+							<span>[[${dto.l_text}]]</span>
+							<input type="text" th:value="${dto.l_text}">
+						</li>
+						<li>
+							<span>[[${dto.t_url}]]</span>
+							<input type="file" name="files" th:value="${dto.t_url}">
+						</li>
+						<li>
+							<span>[[${dto.t_text}]]</span>
+							<input type="text" th:value="${dto.t_text}">
+						</li>
+						<li>
+							<span>[[${dto.b_url}]]</span>
+							<input type="file" name="files" th:value="${dto.b_url}">
+						</li>
+						<li>
+							<span>[[${dto.b_text}]]</span>
+							<input type="text" th:value="${dto.b_text}">
+						</li>
 						<li><a th:href="|/event/used/${dto.no}|">[[${dto.used}]]</a></li>
+						<li><a href="#">수정</a></li>
+						<li><a th:href="|/event/delete/${dto.no}|">삭제</a></li>
 					</ul>
+					</form>
+					
 				</div>
 			</section>
 		</div>
