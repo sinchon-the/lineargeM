@@ -18,4 +18,6 @@ public interface EventService {
 
 	void delete(Long no);
 
+	void edit(EventListDto dto);
+
 }

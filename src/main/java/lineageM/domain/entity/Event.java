@@ -9,6 +9,7 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.DynamicInsert;
 
+import lineageM.domain.dto.EventListDto;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -51,13 +52,41 @@ public class Event {
 		this.t_url = t_url;
 		this.b_url = b_url;
 	}
-
+	
 	public Event usedToggle() {
 		if(used.equals("on")) {
 			used="off";
 		}else if(used.equals("off")) {
 			used="on";
 		}
+		return this;
+	}
+
+	public void setNo(Long no) {
+		this.no = no;
+	}
+	public Event update(EventListDto dto) {
+		this.l_text=dto.getL_text();
+		this.t_text=dto.getT_text();
+		this.b_text=dto.getB_text();
+		
+		if(dto.getL_url()!=null)
+			this.l_url = dto.getL_url();
+		
+		if(dto.getT_url()!=null)
+			this.t_url = dto.getT_url();
+		
+		if(dto.getB_url()!=null)
+			this.b_url = dto.getB_url();
+		
+		return this;
+	}
+	
+	public Event updateText(String l_text, String t_text, String b_text) {
+		this.l_text=l_text;
+		this.t_text=t_text;
+		this.b_text=b_text;
+		
 		return this;
 	}
 	

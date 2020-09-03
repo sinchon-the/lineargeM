@@ -30,4 +30,6 @@ public class EventListDto {
 		this.used = event.getUsed();
 	}
 	
+	
+	
 }

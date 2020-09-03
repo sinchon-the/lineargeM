@@ -25,6 +25,44 @@ public class EventController {
 	@Autowired
 	private EventService service;
 	
+	@PostMapping("/event/edit")
+	public String edit(EventListDto dto,
+			@RequestParam("l_img") MultipartFile l_img,
+			@RequestParam("t_img") MultipartFile t_img,
+			@RequestParam("b_img") MultipartFile b_img ) throws IllegalStateException, IOException {
+		//업로드할 경로
+		String path="D:/spring/work/git/lineargeM/src/main/resources/static/upload/event";
+		//File dir=new File(path);
+		
+		if(!l_img.isEmpty()) {
+			//dto에 파일이름 저장
+			String fileName=l_img.getOriginalFilename();
+			dto.setL_url(fileName);
+			//업로드
+			File file=new File(path,fileName);
+			l_img.transferTo(file);
+			
+		}
+		
+		if(!t_img.isEmpty()) {
+			String fileName=t_img.getOriginalFilename();
+			dto.setT_url(fileName);
+			File file=new File(path,fileName);
+			t_img.transferTo(file);
+		}
+		
+		if(!b_img.isEmpty()) {
+			String fileName=b_img.getOriginalFilename();
+			dto.setB_url(fileName);
+			File file=new File(path,fileName);
+			b_img.transferTo(file);
+		}
+		
+		log.debug(dto);
+		service.edit(dto);
+		return "redirect:/event/list";
+	}
+	
 	@GetMapping("/event/delete/{no}")
 	public String delete(@PathVariable Long no) {
 		service.delete(no);

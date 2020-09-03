@@ -73,5 +73,17 @@ public class EventServiceImpl implements EventService{
 		repository.deleteById(no);
 		
 	}
+
+	@Transactional
+	@Override
+	public void edit(EventListDto dto) {
+		
+		repository.findById(dto.getNo())
+				.map(e->e.update(dto) )
+				.orElse(null);
+		
+		//repository.save(dto.toEntity());
+		
+	}
 	
 }
